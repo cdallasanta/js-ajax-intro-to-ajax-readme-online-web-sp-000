@@ -34,8 +34,8 @@ function showCommits() {
     commits.map(c => {
       '<li><strong>' +
       c.author.login +
-      '</strong> ' +
-      
+      '</strong> - ' +
+      c.
     })
   }`;
 }

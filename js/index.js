@@ -21,25 +21,24 @@ function showRepositories() {
   document.getElementById("repositories").innerHTML = repoList;
 }
 
-function getCommits(el) {
-  const name = el.dataset.repo;
+function getCommits(anchor) {
   const req = new XMLHttpRequest();
   req.addEventListener('load', showCommits);
-  req.open('GET', 'https://api.github.com/repos/octocat/' + name + '/commits');
-  req.send();
+  req.open("get", `https://api.github.com/repos/octocat/${anchor.dataset.repo}/commits`);
+  req.send;
 }
 
 function showCommits() {
   const commits = JSON.parse(this.responseText);
-  const commitsList = `<ul>${commits
-    .map(
-      commit =>
-        '<li><strong>' +
-        commit.author.login +
-        '</strong> - ' +
-        commit.commit.message +
-        '</li>'
-    )
-    .join('')}</ul>`;
+  const commitsList = `<ul>${
+    commits.map(c => {
+      '<li><strong>' +
+      c.author.login +
+      '</strong> - ' +
+      c.commit.message +
+      '<li>'
+    }).join('')
+  }</ul>`;
+
   document.getElementById('commits').innerHTML = commitsList;
 }

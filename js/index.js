@@ -8,7 +8,14 @@ function getRepositories(){
 
 function showRepositories() {
   const repos = JSON.parse(this.responseText)
-  let repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>')
+  let repoList = `<ul>${repos.map(
+      r =>
+        '<li>' +
+        r.name +
+        ' - <a href="#" data-repo="' +
+        r.name +
+        '" onclick="getCommits(this)">Get Commits</a></li>'
+    )
     .join('')}</ul>`;
 
   document.getElementById("repositories").innerHTML = repoList;

@@ -8,11 +8,8 @@ function getRepositories(){
 
 function showRepositories() {
   const repos = JSON.parse(this.responseText)
-  let repoList = '<ul>';
-  for (var i = 0; i < repos.length; i++){
-    repoList += '<li>' + repos[i]['name'] + '</li>';
-  }
-  repoList += '</ul>';
+  let repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>')
+    .join('')}</ul>`;
 
   document.getElementById("repositories").innerHTML = repoList;
 }

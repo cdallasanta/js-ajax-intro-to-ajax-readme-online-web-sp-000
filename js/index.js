@@ -37,6 +37,6 @@ function showCommits() {
       '</strong> - ' +
       c.commit.message +
       '<li>'
-    }.join)
+    }).join
   }`;
 }

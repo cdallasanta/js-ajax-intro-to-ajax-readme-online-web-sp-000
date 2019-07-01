@@ -22,5 +22,5 @@ function showRepositories() {
 }
 
 function getCommits(anchor) {
-
+  anchor.dataset.repo
 }

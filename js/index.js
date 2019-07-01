@@ -30,4 +30,9 @@ function getCommits(anchor) {
 
 function showCommits() {
   const commits = JSON.parse(this.responseText);
+  const commitsList = `<ul>${
+    commits.map(function(c){
+      c.name
+    })
+  }`;
 }

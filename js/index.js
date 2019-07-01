@@ -38,5 +38,7 @@ function showCommits() {
       c.commit.message +
       '<li>'
     }).join('');
-  }`;
+  }</ul>`;
+
+  document.getElementById('')
 }

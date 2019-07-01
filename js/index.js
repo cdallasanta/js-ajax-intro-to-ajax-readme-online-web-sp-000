@@ -31,15 +31,15 @@ function getCommits(el) {
 
 function showCommits() {
   const commits = JSON.parse(this.responseText);
-  const commitsList = `<ul>${
-    commits.map(c => {
-      '<li><strong>' +
-      c.author.login +
-      '</strong> - ' +
-      c.commit.message +
-      '<li>'
-    }).join('')
-  }</ul>`;
-
+  const commitsList = `<ul>${commits
+    .map(
+      commit =>
+        '<li><strong>' +
+        commit.author.login +
+        '</strong> - ' +
+        commit.commit.message +
+        '</li>'
+    )
+    .join('')}</ul>`;
   document.getElementById('commits').innerHTML = commitsList;
 }

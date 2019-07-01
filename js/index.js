@@ -35,7 +35,7 @@ function showCommits() {
       '<li><strong>' +
       c.author.login +
       '</strong> - ' +
-      c.com
+      c.commit.message
     })
   }`;
 }
